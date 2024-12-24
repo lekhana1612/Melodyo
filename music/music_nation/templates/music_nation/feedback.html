@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    .box{
+    font-size:20px;
+}
+h1{
+font-size:60px;
+text-align:center;
+color:white;
+}
+h3{
+color:white;
+}
+.container
+{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 100%;
+
+}
+.btn
+{
+width: 60px;
+height: 60px;
+background-color: #fafafa;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-left: 2em;
+margin-right: 1em;
+cursor: pointer;
+transition: all 0.3s;
+border-radius: 10px;
+}
+i.fa
+{
+font-size: 44px;
+}
+#fb
+{
+color: #006fff;
+text-shadow: 0 0 30px #006fff;
+}
+#ig
+{
+color: #ff5f40;
+text-shadow: 0 0 30px #ff5f40;
+}
+#tw
+{
+color: #00acff;
+text-shadow: 0 0 30px #00acff;
+}
+.btn.fb-btn
+{
+box-shadow: 0 20px 20px -17px rgba(0,111,255,0.53);
+}
+.btn.fb-btn:hover
+{
+transform: scale(1.2);
+box-shadow: 0 30px 45px -15px rgba(0,111,255,0.65);
+}
+.btn.ig-btn
+{
+box-shadow: 0 20px 20px -17px rgba(255,16,39,0.5);
+}
+.btn.ig-btn:hover
+{
+transform: scale(1.2);
+box-shadow: 0 30px 45px -15px rgba(255,16,39,0.57);
+}
+.btn.tw-btn
+{
+box-shadow: 0 20px 20px -17px rgba(0,255,255,0.53);
+}
+.btn.tw-btn:hover
+{
+transform: scale(1.2);
+box-shadow: 0 30px 45px -15px rgba(0,111,255,0.6);
+}
+</style>
+<script>
+    function notif()
+    {
+        alert("submitted successfully!!")
+   
+    }
+</script>
+</head>
+<body>
+<div class="formBox">
+    {{p}}
+    <h2>Feedback</h2>
+    <p>Please give your valuable feedback and let us know about our services and improvements needed.</p>
+   
+    <form method="post" action= "{% url 'savemessage' %}" id="contact" role="form" novalidate="novalidate" class="bv-form">
+      {% csrf_token %}
+        <div class="nameInp">
+            <i class="fa fa-user icon"></i>
+            <input type="text" placeholder="Full Name" name="custname" id="custname">
+
+        </div>
+        <div class="mailInp">
+           
+            <input type="email" name="email" id="email" placeholder="Email">
+        </div>
+        <div class="phoneInp">
+           
+            <input type="number" name="phone" id="phone" placeholder="Phone" min="100000" max="9999999999">
+        </div>
+        <div class="queryInp">
+            <textarea name="message" id="message" cols="30" rows="5"
+                placeholder="Any comment or your query"></textarea>
+        </div>
+        <div class="submitBtn">
+            <button id="btn" onclick="notif()">Send</button>
+        </div>
+    </form>
+    <p class="extra"><a href="#">You can also contact us @ +91-9033455778<br>prevents02@gmail.com</a></p>
+</div>
+
+</body>
+</html>
+
+
+           
